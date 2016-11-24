@@ -14,6 +14,7 @@ public class ActivityDScenario2 extends BaseActivity {
     protected void startNextActivity() {
         final Intent intent = new Intent(this, ActivityAScenario2.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         this.startActivity(intent);
     }
 }

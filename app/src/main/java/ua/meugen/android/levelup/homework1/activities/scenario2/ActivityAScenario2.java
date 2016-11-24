@@ -1,6 +1,7 @@
 package ua.meugen.android.levelup.homework1.activities.scenario2;
 
 import android.content.Intent;
+import android.widget.Toast;
 
 import ua.meugen.android.levelup.homework1.activities.BaseActivity;
 
@@ -16,5 +17,11 @@ public class ActivityAScenario2 extends BaseActivity {
         intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
+    }
+
+    @Override
+    protected void onNewIntent(final Intent intent) {
+        super.onNewIntent(intent);
+        Toast.makeText(this, "onNewIntent(" + intent + ")", Toast.LENGTH_LONG).show();
     }
 }
