@@ -19,27 +19,34 @@
         </activity>
 
         <activity android:name=".activities.scenario1.ActivityAScenario1"
-            android:label="@string/lablel_activity_a" />
+            android:label="@string/lablel_activity_a"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".activities.scenario1.ActivityBScenario1"
-            android:label="@string/lablel_activity_b" />
+            android:label="@string/lablel_activity_b"
+            android:parentActivityName=".activities.scenario1.ActivityAScenario1"/>
         <activity android:name=".activities.scenario1.ActivityCScenario1"
             android:label="@string/lablel_activity_c"
             android:noHistory="true" />
         <activity android:name=".activities.scenario1.ActivityDScenario1"
-            android:label="@string/lablel_activity_d" />
+            android:label="@string/lablel_activity_d"
+                  android:parentActivityName=".activities.scenario1.ActivityBScenario1"/>
 
         <activity
             android:name=".activities.scenario2.ActivityAScenario2"
             android:label="@string/lablel_activity_a"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             android:allowTaskReparenting="true"
-            android:taskAffinity=""/>
+            android:taskAffinity=""
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".activities.scenario2.ActivityBScenario2"
-                  android:label="@string/lablel_activity_b" />
+                  android:label="@string/lablel_activity_b"
+            android:parentActivityName=".activities.scenario2.ActivityAScenario2"/>
         <activity android:name=".activities.scenario2.ActivityCScenario2"
-                  android:label="@string/lablel_activity_c" />
+                  android:label="@string/lablel_activity_c"
+            android:parentActivityName=".activities.scenario2.ActivityBScenario2"/>
         <activity android:name=".activities.scenario2.ActivityDScenario2"
-                  android:label="@string/lablel_activity_d" />
+                  android:label="@string/lablel_activity_d"
+            android:parentActivityName=".activities.scenario2.ActivityCScenario2"/>
     </application>
 
 </manifest>

@@ -20,15 +20,15 @@ public class MainActivity extends AppCompatActivity {
 
     private void activityOrder1() {
         final Intent intent = new Intent(this, ActivityAScenario1.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
     }
 
     private void activityOrder2() {
         final Intent intent = new Intent(this, ActivityAScenario2.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        //intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
     }
 }

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -18,7 +19,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private static final String CONTENT_KEY = "content";
 
-    private static final long DELAY = 500L;
+    private static final long DELAY = 1000L;
 
     private final Handler handler;
     private final String tag;
@@ -36,6 +37,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_content);
+
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.homework = (Homework) getApplicationContext();
@@ -66,15 +69,6 @@ public abstract class BaseActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         outState.putCharSequence(CONTENT_KEY, this.content);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(final MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            finish();
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     @Override
