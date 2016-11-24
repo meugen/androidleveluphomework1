@@ -8,7 +8,7 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="ua.meugen.android.levelup.homework1.activities.order1.ActivityAOrder1">
+    tools:context="ua.meugen.android.levelup.homework1.activities.scenario1.ActivityAScenario1">
 
     <Button
         android:layout_width="match_parent"

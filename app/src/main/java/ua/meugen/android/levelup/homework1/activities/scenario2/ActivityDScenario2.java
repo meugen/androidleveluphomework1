@@ -1,19 +1,18 @@
-package ua.meugen.android.levelup.homework1.activities.order2;
+package ua.meugen.android.levelup.homework1.activities.scenario2;
 
 import android.content.Intent;
 
 import ua.meugen.android.levelup.homework1.activities.BaseActivity;
 
-public class ActivityDOrder2 extends BaseActivity {
+public class ActivityDScenario2 extends BaseActivity {
 
-    public ActivityDOrder2() {
+    public ActivityDScenario2() {
         super("ActivityD");
     }
 
     @Override
     protected void startNextActivity() {
-        final Intent intent = new Intent(this, ActivityAOrder2.class);
-        //intent.addFlags(Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        final Intent intent = new Intent(this, ActivityAScenario2.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         this.startActivity(intent);
     }

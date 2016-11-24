@@ -1,12 +1,12 @@
-package ua.meugen.android.levelup.homework1.activities.order1;
+package ua.meugen.android.levelup.homework1.activities.scenario1;
 
 import android.widget.Toast;
 
 import ua.meugen.android.levelup.homework1.activities.BaseActivity;
 
-public class ActivityDOrder1 extends BaseActivity {
+public class ActivityDScenario1 extends BaseActivity {
 
-    public ActivityDOrder1() {
+    public ActivityDScenario1() {
         super("ActivityD");
     }
 
