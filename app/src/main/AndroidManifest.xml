@@ -26,7 +26,8 @@
             android:parentActivityName=".activities.scenario1.ActivityAScenario1"/>
         <activity android:name=".activities.scenario1.ActivityCScenario1"
             android:label="@string/lablel_activity_c"
-            android:noHistory="true" />
+            android:noHistory="true"
+                  android:parentActivityName=".activities.scenario1.ActivityBScenario1"/>
         <activity android:name=".activities.scenario1.ActivityDScenario1"
             android:label="@string/lablel_activity_d"
                   android:parentActivityName=".activities.scenario1.ActivityBScenario1"/>
