@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Android level-up homework1</string>
+
+    <string name="lablel_activity_a">ActivityA</string>
+    <string name="lablel_activity_b">ActivityB</string>
+    <string name="lablel_activity_c">ActivityC</string>
+    <string name="lablel_activity_d">ActivityD</string>
 </resources>

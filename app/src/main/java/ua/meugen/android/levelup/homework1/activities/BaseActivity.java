@@ -9,7 +9,6 @@ import android.widget.TextView;
 
 import ua.meugen.android.levelup.homework1.Homework;
 import ua.meugen.android.levelup.homework1.R;
-import ua.meugen.android.levelup.homework1.starters.Order;
 
 /**
  * Created by meugen on 23.11.16.
@@ -17,8 +16,7 @@ import ua.meugen.android.levelup.homework1.starters.Order;
 
 public abstract class BaseActivity extends AppCompatActivity {
 
-    public static final String ORDER_KEY = "order";
-    public static final String CONTENT_KEY = "content";
+    private static final String CONTENT_KEY = "content";
 
     private static final long DELAY = 500L;
 
@@ -27,7 +25,6 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     private Homework homework;
 
-    private Order order;
     private CharSequence content;
 
     public BaseActivity(final String tag) {
@@ -38,7 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        setContentView(R.layout.activity_content);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         this.homework = (Homework) getApplicationContext();
@@ -49,15 +46,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable final Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
 
-        if (savedInstanceState == null) {
-            this.order = Order.valueOf(getIntent().getStringExtra(ORDER_KEY));
-            // this.content = this.homework.buildTaskString();
-        } else {
-            this.order = Order.valueOf(savedInstanceState.getString(ORDER_KEY));
+        if (savedInstanceState != null) {
             this.content = savedInstanceState.getCharSequence(CONTENT_KEY);
         }
 
-        findViewById(R.id.next).setOnClickListener(v -> startNextActivity(this.order));
+        findViewById(R.id.next).setOnClickListener(v -> startNextActivity());
         this.handler.postDelayed(this::updateContent, DELAY);
     }
 
@@ -72,7 +65,6 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onSaveInstanceState(final Bundle outState) {
         super.onSaveInstanceState(outState);
 
-        outState.putString(ORDER_KEY, this.order.name());
         outState.putCharSequence(CONTENT_KEY, this.content);
     }
 
@@ -96,5 +88,5 @@ public abstract class BaseActivity extends AppCompatActivity {
         return this.tag + "[" + this.hashCode() + "]";
     }
 
-    protected abstract void startNextActivity(final Order order);
+    protected abstract void startNextActivity();
 }

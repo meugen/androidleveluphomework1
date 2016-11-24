@@ -17,14 +17,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activities.ActivityA"
-            android:label="ActivityA" />
-        <activity android:name=".activities.ActivityB"
-            android:label="ActivityB" />
-        <activity android:name=".activities.ActivityC"
-            android:label="ActivityC" />
-        <activity android:name=".activities.ActivityD"
-            android:label="ActivityD" />
+
+        <activity android:name=".activities.order1.ActivityAOrder1"
+            android:label="@string/lablel_activity_a" />
+        <activity android:name=".activities.order1.ActivityBOrder1"
+            android:label="@string/lablel_activity_b" />
+        <activity android:name=".activities.order1.ActivityCOrder1"
+            android:label="@string/lablel_activity_c"
+            android:noHistory="true" />
+        <activity android:name=".activities.order1.ActivityDOrder1"
+            android:label="@string/lablel_activity_d" />
+
+        <activity
+            android:name=".activities.order2.ActivityAOrder2"
+            android:label="@string/lablel_activity_a"
+            android:launchMode="singleTop"
+            android:allowTaskReparenting="true"
+            android:taskAffinity=""/>
+        <activity android:name=".activities.order2.ActivityBOrder2"
+                  android:label="@string/lablel_activity_b" />
+        <activity android:name=".activities.order2.ActivityCOrder2"
+                  android:label="@string/lablel_activity_c" />
+        <activity android:name=".activities.order2.ActivityDOrder2"
+                  android:label="@string/lablel_activity_d" />
     </application>
 
 </manifest>
