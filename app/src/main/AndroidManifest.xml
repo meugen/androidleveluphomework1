@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ua.meugen.android.levelup.homework1">
 
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -20,17 +22,33 @@
 
         <activity android:name=".activities.scenario1.ActivityAScenario1"
             android:label="@string/lablel_activity_a"
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".MainActivity"/>
+        </activity>
         <activity android:name=".activities.scenario1.ActivityBScenario1"
             android:label="@string/lablel_activity_b"
-            android:parentActivityName=".activities.scenario1.ActivityAScenario1"/>
+            android:parentActivityName=".activities.scenario1.ActivityAScenario1">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".activities.scenario1.ActivityAScenario1"/>
+        </activity>
         <activity android:name=".activities.scenario1.ActivityCScenario1"
             android:label="@string/lablel_activity_c"
             android:noHistory="true"
-                  android:parentActivityName=".activities.scenario1.ActivityBScenario1"/>
+                  android:parentActivityName=".activities.scenario1.ActivityBScenario1">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".activities.scenario1.ActivityBScenario1"/>
+        </activity>
         <activity android:name=".activities.scenario1.ActivityDScenario1"
             android:label="@string/lablel_activity_d"
-                  android:parentActivityName=".activities.scenario1.ActivityBScenario1"/>
+                  android:parentActivityName=".activities.scenario1.ActivityBScenario1">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".activities.scenario1.ActivityBScenario1"/>
+        </activity>
 
         <activity
             android:name=".activities.scenario2.ActivityAScenario2"
@@ -38,16 +56,32 @@
             android:launchMode="singleTask"
             android:allowTaskReparenting="true"
             android:taskAffinity=""
-            android:parentActivityName=".MainActivity"/>
+            android:parentActivityName=".MainActivity">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".MainActivity"/>
+        </activity>
         <activity android:name=".activities.scenario2.ActivityBScenario2"
                   android:label="@string/lablel_activity_b"
-            android:parentActivityName=".activities.scenario2.ActivityAScenario2"/>
+            android:parentActivityName=".activities.scenario2.ActivityAScenario2">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".activities.scenario2.ActivityAScenario2"/>
+        </activity>
         <activity android:name=".activities.scenario2.ActivityCScenario2"
                   android:label="@string/lablel_activity_c"
-            android:parentActivityName=".activities.scenario2.ActivityBScenario2"/>
+            android:parentActivityName=".activities.scenario2.ActivityBScenario2">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".activities.scenario2.ActivityBScenario2"/>
+        </activity>
         <activity android:name=".activities.scenario2.ActivityDScenario2"
                   android:label="@string/lablel_activity_d"
-            android:parentActivityName=".activities.scenario2.ActivityCScenario2"/>
+            android:parentActivityName=".activities.scenario2.ActivityCScenario2">
+
+            <meta-data android:name="android.support.PARENT_ACTIVITY"
+                       android:value=".activities.scenario2.ActivityCScenario2"/>
+        </activity>
     </application>
 
 </manifest>
