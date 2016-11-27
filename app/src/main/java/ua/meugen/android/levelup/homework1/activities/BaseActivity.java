@@ -1,5 +1,6 @@
 package ua.meugen.android.levelup.homework1.activities;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -7,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import java.lang.ref.WeakReference;
 
 import ua.meugen.android.levelup.homework1.Homework;
 import ua.meugen.android.levelup.homework1.R;
@@ -53,7 +56,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         }
 
         findViewById(R.id.next).setOnClickListener(v -> startNextActivity());
-        this.handler.postDelayed(this::updateContent, DELAY);
+        this.handler.postDelayed(new UpdateContentRunnable(this), DELAY);
     }
 
     private void updateContent() {
@@ -82,4 +85,21 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract void startNextActivity();
+
+    private static class UpdateContentRunnable implements Runnable {
+
+        private final WeakReference<BaseActivity> ref;
+
+        public UpdateContentRunnable(final BaseActivity activity) {
+            this.ref = new WeakReference<>(activity);
+        }
+
+        @Override
+        public void run() {
+            final BaseActivity activity = this.ref.get();
+            if (activity != null) {
+                activity.updateContent();
+            }
+        }
+    }
 }
