@@ -1,8 +1,8 @@
 package ua.meugen.android.levelup.homework1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 
 import ua.meugen.android.levelup.homework1.activities.scenario1.ActivityAScenario1;
 import ua.meugen.android.levelup.homework1.activities.scenario2.ActivityAScenario2;

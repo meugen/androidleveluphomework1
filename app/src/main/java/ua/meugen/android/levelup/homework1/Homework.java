@@ -4,9 +4,7 @@ import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.Application;
 import android.util.SparseArray;
-import android.util.StringBuilderPrinter;
 
-import java.util.List;
 import java.util.Stack;
 
 /**
